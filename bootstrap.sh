@@ -14,8 +14,10 @@ sed s/HOSTNAME/$HOSTNAME/ /usr/local/hadoop/etc/hadoop/core-site.xml.template > 
 
 
 service sshd start
-$HADOOP_PREFIX/sbin/start-dfs.sh
-$HADOOP_PREFIX/sbin/start-yarn.sh
+
+# Do not start Hadoop
+#$HADOOP_PREFIX/sbin/start-dfs.sh
+#$HADOOP_PREFIX/sbin/start-yarn.sh
 
 if [[ $1 == "-d" ]]; then
   while true; do sleep 1000; done
