@@ -14,6 +14,7 @@ sed s/HOSTNAME/$HOSTNAME/ /usr/local/hadoop/etc/hadoop/core-site.xml.template > 
 
 
 service sshd start
+systemd.setenv=NAMESERVER_ADDR=172.17.0.2
 
 # Do not start Hadoop
 #$HADOOP_PREFIX/sbin/start-dfs.sh
